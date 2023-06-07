@@ -1,5 +1,3 @@
-alert("can you see this?")
-
 /* name - the name of the coffee
 pic - the picture of the coffee
 color - the color associated with the coffee
@@ -10,12 +8,62 @@ desc - a description of the coffee
 
 let myDate = new Date();
 let today = myDate.getDay();
+let coffee = "";
 
-// today = 3;
+//use location object to access querystring (address bar)
+const queryString = window.location.search;
+    
+//output to console    
+console.log(queryString);
+    
+//separate query string parameters
+const urlParams = new URLSearchParams(queryString);
+
+
+function coffeeTemplate(coffee){
+
+    return `
+    <p>
+            <img src="${coffee.pic}" alt="${coffee.alt}" id="coffee" />
+            <strong class="feature">${coffee.day}'s Coffee Special:</strong> ${coffee.day}'s daily coffee special is <strong class="feature">${coffee.name}</strong>, ${coffee.desc}</p>    
+    `;
+
+}
+
+if(urlParams.has("day")){//from querystring
+    today = urlParams.get("day");
+ }
+ 
+today = parseInt(today);
 
 switch(today){
+
+    case 1:
+        today = "Monday";
+
+        coffee = {
+            name: "Bubble Tea",
+            pic: "images/bubble-tea.jpg",
+            alt: "A picture of a bubble tea",
+            color: "pink",
+            day: "Monday",
+            desc: 'I love me some bubble tea',
+        };
+
+    break;
+
     case 2:
         today = "Tuesday";
+
+        coffee = {
+            name: "Mocha",
+            pic: "images/mocha.jpg",
+            alt: "A picture of a mocha",
+            color: "brown",
+            day: "Tuesday",
+            desc: 'I hate mocha!',
+        };
+
     break;
 
     case 3:
@@ -26,13 +74,9 @@ switch(today){
     today = "Day is unknown";
 }
 
-let coffee = {
-    name: "Bubble Tea",
-    pic: "images/bubble-tea.jpg",
-    alt: "A picture of a bubble tea",
-    color: "pink",
-    day: "Wednesday",
-    desc: 'I love me some bubble tea',
-}
+document.getElementById("coffee-cup").innerHTML = coffeeTemplate(coffee);
+
+
+document.querySelector("html").style.backgroundColor = coffee.color;
 
 console.log(coffee);
