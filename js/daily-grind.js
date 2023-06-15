@@ -68,6 +68,67 @@ switch(today){
 
     case 3:
         today = "Wednesday";
+
+        coffee = {
+            name: "Caramel Latte",
+            pic: "images/caramel-latte.jpg",
+            alt: "A picture of a caramel latte",
+            color: "red",
+            day: "Wednesday",
+            desc: 'I love caramel latte!',
+        };
+    break;
+
+    case 4:
+        today = "Thursday";
+
+        coffee = {
+            name: "Cold Brew",
+            pic: "images/cold-brew.jpg",
+            alt: "A picture of a cold brew",
+            color: "yellow",
+            day: "Thursday",
+            desc: 'Cold brew is just okay!',
+        };
+    break;
+
+    case 5:
+        today = "Friday";
+
+        coffee = {
+            name: "Drip",
+            pic: "images/drip.jpg",
+            alt: "A picture of a drip",
+            color: "purple",
+            day: "Friday",
+            desc: 'Friday is drip day!',
+        };
+    break;
+
+    case 6:
+        today = "Saturday";
+
+        coffee = {
+            name: "Frappucino",
+            pic: "images/frappaccino.jpg",
+            alt: "A picture of a frappucino",
+            color: "blue",
+            day: "Saturday",
+            desc: 'Frappuccinos are for Saturdays!',
+        };
+    break;
+
+    case 0:
+        today = "Sunday";
+
+        coffee = {
+            name: "Pumpkin Spice Latte",
+            pic: "images/pumpkin-spice-latte.jpg",
+            alt: "A picture of a pumpkin spice latte",
+            color: "orange",
+            day: "Sunday",
+            desc: 'Pumpkin spice latte Sundays!',
+        };
     break;
 
     default:
